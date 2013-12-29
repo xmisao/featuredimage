@@ -1,5 +1,7 @@
 # FeaturedImage
 
+<img src="featuredimage.jpg">
+
 ## What is FeaturedImage?
 
 FeaturedImage is the finder that extract featured image from a web page.
@@ -10,7 +12,7 @@ Furthermore, FeaturedImage contains pretty good thumbnail generating function to
 
 ## Usage
 
-~~~~
+```ruby
 require 'featuredimage'
 
 # find first featured image from a web page
@@ -21,7 +23,7 @@ thumbnail = FeaturedImage::Converter.convert(featuredimage, 180, 120) # return B
 
 # save BLOB
 open('thumbnail.jpg', 'w'){|f| f.write thmbnail}
-~~~~
+```
 
 ## API Reference
 
@@ -43,39 +45,39 @@ FeaturedImage::Finder APIs receive various argument about featured image criteri
 
 Empty criteria. Anything image is match as featured image.
 
-~~~~
+```ruby
 FeaturedImage::Finder.first URL
-~~~~
+```
 
 Aspect ratio range criteria. Featured image aspect ratio restrict 4:3 to 16:9. See also _Aspect Ratio_.
 
-~~~~
+```ruby
 FeaturedImage::Finder.first URL 1.2..1.8
-~~~~
+```
 
 Minimum size criteria. Minimum featured image size is 320x240.
 
-~~~~
+```ruby
 FeaturedImage::Finder.first URL 320 240
-~~~~
+```
 
 Minimum size criteria with aspect ratio range restrict 4:3 to 16:9.
 
-~~~~
+```ruby
 FeaturedImage::Finder.first URL 320 240 1.2..1.8
-~~~~
+```
 
 Minimum and maximum size criteria. Featured image size is 320x240 to 1024x768.
 
-~~~~
+```ruby
 FeaturedImage::Finder.first URL 320 240 1024 768
-~~~~
+```
 
 The most restricted criteria. Featured image size is 320x240 to 1024x768, and aspect ratio restrict 4:3 to 16:9.
 
-~~~~
+```ruby
 FeaturedImage::Finder.first URL 320 240 1024 768 1.2..1.8
-~~~~
+```
 
 ### Aspect Ratio
 
