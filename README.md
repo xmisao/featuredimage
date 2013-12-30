@@ -6,9 +6,9 @@
 
 FeaturedImage is a finder that extract featured image from a web page.
 
-FeaturedImage::Finder accesses and analyses a web page using Mechanize, download images which are referenced by IMG tag in HTML, and specify a featured image based on size of image using RMagick.
+FeaturedImage::Finder analyses a web page using Mechanize, downloads images which are referenced by IMG tags in HTML file, and specifies featured images based on size of image using RMagick.
 
-Furthermore, FeaturedImage contains pretty good thumbnail generating function too. FeaturedImage::Converter crops centered area of image, resizes, and convert to arbitrary format automatically.
+Furthermore, FeaturedImage has pretty good thumbnail generating functions. FeaturedImage::Converter crops centered area of image, resizes, and converts to an arbitrary format automatically.
 
 ## Usage
 
@@ -31,17 +31,26 @@ open('thumbnail.jpg', 'w'){|f| f.write thumbnail}
 
 <table>
 <tr><th>API</th><th>Description</th></tr>
-<tr><td>FeaturedImage::Finder.first</td><td>Find first featured image that is matching criteria from web page. And return it as Magick::ImageList. If the featured image does not exist,returns nil.</td></tr>
-<tr><td>FeaturedImage::Finder.biggest</td><td>Find the biggest featured image that is matching criteria from web page. And return it as Magick::ImageList. If the featured image does not exist,returns nil.</td></tr>
-<tr><td>FeaturedImage::Finder.all</td><td>Find all featured images that are matching criteria from web page. And returns them as Array of Magick::ImageList. If the featured image does not exist, returns empty Array.</td></tr>
-<tr><td>FeaturedImage::Converter.convert</td><td>Convert image to arbitary sized thumbnai and return BLOB. Default thumbnail format is JPEG compression quality 60. This is same as FeaturedImage::Converter.convert(IMAGE, WIDTH, HEIGHT, {format:"JPEG", quality:60}).</td></tr>
+<tr>
+<td>FeaturedImage::Finder.first</td>
+<td>Finds the first featured image that matches the specified criteria from the web page. Returns an image as Magick::ImageList if any featured images exist; otherwise, nil.</td>
+</tr><tr>
+<td>FeaturedImage::Finder.biggest</td>
+<td>Finds the biggest featured image that matches the specified criteria from the web page. Returns an image as Magick::ImageList if any featured images exist; otherwise, nil.</td>
+</tr><tr>
+<td>FeaturedImage::Finder.all</td>
+<td>Finds all featured images that match the specified criteria from the web page. Returns an Array of image as Magick::ImageList if any featured images exist; otherwise, nil.</td>
+</tr><tr>
+<td>FeaturedImage::Converter.convert</td>
+<td>Converts an image to an arbitary sized thumbnail and returns its BLOB. The default thumbnail format is JPEG with compression quality at 60. This is the same as `FeaturedImage::Converter.convert(IMAGE, WIDTH, HEIGHT, {format:"JPEG", quality:60}).`</td>
+</tr>
 </table>
 
-Also, you can use FeaturedImage::Finder and FeaturedImage::Converter instance directory, if you want. See source code.
+Also, you can use FeaturedImage::Finder and FeaturedImage::Converter instance directly, if you want. See source code.
 
 ### Criteria
 
-FeaturedImage::Finder APIs receive various argument about featured image criteria. These are examples.
+FeaturedImage::Finder APIs receive various argument about featured image criteria. Some examples follow.
 
 Empty criteria. Anything image is match as featured image.
 
