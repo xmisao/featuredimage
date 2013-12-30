@@ -39,7 +39,7 @@ open('thumbnail.jpg', 'w'){|f| f.write thumbnail}
 <td>Finds the biggest featured image that matches the specified criteria from the web page. Returns an image as Magick::ImageList if any featured images exist; otherwise, nil.</td>
 </tr><tr>
 <td>FeaturedImage::Finder.all</td>
-<td>Finds all featured images that match the specified criteria from the web page. Returns an Array of image as Magick::ImageList if any featured images exist; otherwise, nil.</td>
+<td>Finds all featured images that match the specified criteria from the web page. Returns an Array of image as Magick::ImageList if any featured images exist; otherwise, an empty Array.</td>
 </tr><tr>
 <td>FeaturedImage::Converter.convert</td>
 <td>Converts an image to an arbitary sized thumbnail and returns its BLOB. The default thumbnail format is JPEG with compression quality at 60. This is the same as `FeaturedImage::Converter.convert(IMAGE, WIDTH, HEIGHT, {format:"JPEG", quality:60}).`</td>
