@@ -1,4 +1,8 @@
-require 'RMagick'
+begin
+  require "rmagick"
+rescue LoadError
+  require "RMagick"
+end
 
 module FeaturedImage
 	class Converter
