@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'featuredimage'
-  s.version     = '0.9.0'
-  s.date        = '2013-12-29'
+  s.version     = '0.9.1'
+  s.date        = '2017-07-17'
   s.summary     = "FeaturedImage is the finder that extract featured image from a web page."
   s.description = <<DESC
 FeaturedImage is the finder that extract featured image from a web page.
